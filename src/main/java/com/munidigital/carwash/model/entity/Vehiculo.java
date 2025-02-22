@@ -1,19 +1,15 @@
 package com.munidigital.carwash.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.io.Serializable;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Vehiculo implements Serializable {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long vehiculoId;
 
     private String modelo;
