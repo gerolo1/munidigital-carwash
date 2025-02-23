@@ -1,0 +1,80 @@
+[
+  {
+    "cobroId": 1,
+    "monto": 1000,
+    "fecha": "2026-02-23T15:30:00",
+    "turno": {
+      "turnoId": 1,
+      "fecha": "2026-02-23T15:30:00",
+      "tipoServicio": "LavadoExterior",
+      "estado": "Finalizado",
+      "vehiculo": {
+        "vehiculoId": 1,
+        "modelo": "Renault Duster",
+        "matricula": "A953XSD",
+        "tipo": {
+          "tipoVehiculoId": 1,
+          "nombre": "SUV"
+        },
+        "cliente": {
+          "clienteId": 3,
+          "nombre": "Nico",
+          "mail": "nico@gmail.com",
+          "telefono": 1166945555
+        }
+      }
+    }
+  },
+  {
+    "cobroId": 2,
+    "monto": 5000,
+    "fecha": "2026-02-23T15:30:00",
+    "turno": {
+      "turnoId": 2,
+      "fecha": "2026-02-23T15:30:00",
+      "tipoServicio": "Completo",
+      "estado": "EnProceso",
+      "vehiculo": {
+        "vehiculoId": 1,
+        "modelo": "Renault Duster",
+        "matricula": "A953XSD",
+        "tipo": {
+          "tipoVehiculoId": 1,
+          "nombre": "SUV"
+        },
+        "cliente": {
+          "clienteId": 3,
+          "nombre": "Nico",
+          "mail": "nico@gmail.com",
+          "telefono": 1166945555
+        }
+      }
+    }
+  },
+  {
+    "cobroId": 3,
+    "monto": 20,
+    "fecha": "2026-02-23T15:30:00",
+    "turno": {
+      "turnoId": 3,
+      "fecha": "2026-02-23T15:30:00",
+      "tipoServicio": "LavadoExterior",
+      "estado": "Finalizado",
+      "vehiculo": {
+        "vehiculoId": 1,
+        "modelo": "Renault Duster",
+        "matricula": "A953XSD",
+        "tipo": {
+          "tipoVehiculoId": 1,
+          "nombre": "SUV"
+        },
+        "cliente": {
+          "clienteId": 3,
+          "nombre": "Nico",
+          "mail": "nico@gmail.com",
+          "telefono": 1166945555
+        }
+      }
+    }
+  }
+]

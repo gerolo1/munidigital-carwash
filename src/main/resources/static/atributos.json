@@ -1,0 +1,42 @@
+[
+  {
+    "vehiculoAtributoId": 1,
+    "vehiculo": {
+      "vehiculoId": 1,
+      "modelo": "Renault Duster",
+      "matricula": "A953XSD",
+      "tipo": {
+        "tipoVehiculoId": 1,
+        "nombre": "SUV"
+      },
+      "cliente": {
+        "clienteId": 3,
+        "nombre": "Nico",
+        "mail": "nico@gmail.com",
+        "telefono": 1166945555
+      }
+    },
+    "nombre": "Asientos",
+    "valor": "5"
+  },
+  {
+    "vehiculoAtributoId": 2,
+    "vehiculo": {
+      "vehiculoId": 4,
+      "modelo": "Audi TT",
+      "matricula": "A456XSD",
+      "tipo": {
+        "tipoVehiculoId": 5,
+        "nombre": "Coupe"
+      },
+      "cliente": {
+        "clienteId": 1,
+        "nombre": "Carlos",
+        "mail": "carlos@gmail.com",
+        "telefono": 1155998844
+      }
+    },
+    "nombre": "Color del tapizado",
+    "valor": "Gris"
+  }
+]

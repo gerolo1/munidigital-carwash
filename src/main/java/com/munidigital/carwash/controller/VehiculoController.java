@@ -1,12 +1,14 @@
 package com.munidigital.carwash.controller;
 
 import com.munidigital.carwash.model.dto.VehiculoCreateRequest;
+import com.munidigital.carwash.model.entity.Cliente;
+import com.munidigital.carwash.model.entity.Vehiculo;
 import com.munidigital.carwash.service.VehiculoService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/vehiculo")
@@ -16,7 +18,12 @@ public class VehiculoController {
     private VehiculoService vehiculoService;
 
     @PostMapping("/crear")
-    public void crearVehiculo(@RequestBody VehiculoCreateRequest request) {
-        vehiculoService.crearVehiculo(request);
+    public ResponseEntity<Vehiculo> crearVehiculo(@RequestBody VehiculoCreateRequest request) {
+        return vehiculoService.crearVehiculo(request);
+    }
+
+    @GetMapping("/getAll")
+    public ResponseEntity<List<Vehiculo>> obtenerVehiculos() {
+        return vehiculoService.getVehiculos();
     }
 }

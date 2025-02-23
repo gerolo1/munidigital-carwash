@@ -1,7 +1,12 @@
 package com.munidigital.carwash.repository;
 
 import com.munidigital.carwash.model.entity.Cliente;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+import java.util.List;
+
+public interface ClienteRepository {
+
+    Cliente saveCliente(Cliente cliente);
+
+    List<Cliente> obtenerClientes();
 }

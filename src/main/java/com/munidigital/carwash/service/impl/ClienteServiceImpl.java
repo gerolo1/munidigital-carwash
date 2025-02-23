@@ -6,6 +6,8 @@ import com.munidigital.carwash.repository.ClienteRepository;
 import com.munidigital.carwash.service.ClienteService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,28 +21,33 @@ public class ClienteServiceImpl implements ClienteService {
     private final ClienteRepository clienteRepository;
 
     @Override
-    public void crearCliente(ClienteCreateRequest request) {
+    public ResponseEntity<Cliente> crearCliente(ClienteCreateRequest request) {
         log.info("INIT: ClienteServiceImpl - crearCliente - {}", request);
 
         validateCliente(request);
 
         Cliente cliente = request.toEntity();
 
-        log.info("INIT: ClienteRepository - save - {}", cliente);
-        clienteRepository.save(cliente);
-        log.info("END: ClienteRepository - save - {}", cliente);
+        Cliente clienteCreated = clienteRepository.saveCliente(cliente);
 
         log.info("END: ClienteServiceImpl - crearCliente - {}", request);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(clienteCreated);
     }
 
     @Override
-    public List<Cliente> getClientes() {
+    public ResponseEntity<List<Cliente>> getClientes() {
         log.info("INIT: ClienteServiceImpl - getClientes");
 
-        List<Cliente> clientes = clienteRepository.findAll();
+        List<Cliente> clientes = clienteRepository.obtenerClientes();
 
         log.info("END: ClienteServiceImpl - getClientes - {}", clientes);
-        return clientes;
+
+        if(clientes.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(clientes);
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(clientes);
+        }
     }
 
     private void validateCliente(ClienteCreateRequest cliente) {

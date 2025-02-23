@@ -1,14 +1,19 @@
 package com.munidigital.carwash.service.impl;
 
 import com.munidigital.carwash.model.dto.TurnoCreateRequest;
+import com.munidigital.carwash.model.entity.Cobro;
 import com.munidigital.carwash.model.entity.Turno;
 import com.munidigital.carwash.repository.TurnoRepository;
+import com.munidigital.carwash.repository.VehiculoRepository;
 import com.munidigital.carwash.service.TurnoService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -18,22 +23,39 @@ public class TurnoServiceImpl implements TurnoService {
 
     private final TurnoRepository turnoRepository;
 
-    @Override
-    public void crearTurno(TurnoCreateRequest request) {
-        log.info("INIT: TurnoServiceImpl - crearTurno - {}", request);
+    private final VehiculoRepository vehiculoRepository;
 
-        validateTurno(request);
+    @Override
+    public ResponseEntity<Turno> crearTurno(TurnoCreateRequest request) {
+        log.info("INIT: TurnoServiceImpl - crearTurno - {}", request);
 
         Turno turno = request.toEntity();
 
-        log.info("INIT: TurnoRepository - save - {}", turno);
-        turnoRepository.save(turno);
-        log.info("END: TurnoRepository - save - {}", turno);
+        validateTurno(turno);
+
+        Turno turnoCreated = turnoRepository.saveTurno(turno);
 
         log.info("END: TurnoServiceImpl - crearTurno - {}", request);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(turnoCreated);
     }
 
-    private void validateTurno(TurnoCreateRequest turno) {
+    @Override
+    public ResponseEntity<List<Turno>> getTurnos() {
+        log.info("INIT: TurnoServiceImpl - getTurnos");
+
+        List<Turno> turnos = turnoRepository.obtenerTurnos();
+
+        log.info("END: TurnoServiceImpl - getTurnos - {}", turnos);
+
+        if(turnos.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(turnos);
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(turnos);
+        }
+    }
+
+    private void validateTurno(Turno turno) {
         log.info("INIT: TurnoServiceImpl - validateTurno - {}", turno);
 
         if(Objects.isNull(turno)) {
@@ -64,6 +86,11 @@ public class TurnoServiceImpl implements TurnoService {
         if(turno.getFecha().isBefore(LocalDateTime.now())) {
             log.error("La fecha debe ser valida");
             throw new IllegalArgumentException("La fecha debe ser valida");
+        }
+
+        if(vehiculoRepository.buscarVehiculo(turno.getVehiculo().getVehiculoId()).isEmpty()) {
+            log.error("El vehiculo no se encuentra registrado");
+            throw new IllegalArgumentException("El vehiculo no se encuentra registrado");
         }
 
         log.info("END: TurnoServiceImpl - validateTurno - {}", turno);

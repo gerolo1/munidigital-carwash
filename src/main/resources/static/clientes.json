@@ -1,0 +1,32 @@
+[
+  {
+    "clienteId": 1,
+    "nombre": "Carlos",
+    "mail": "carlos@gmail.com",
+    "telefono": 1155998844
+  },
+  {
+    "clienteId": 2,
+    "nombre": "Pedro",
+    "mail": "pedro@gmail.com",
+    "telefono": 1166948712
+  },
+  {
+    "clienteId": 3,
+    "nombre": "Nico",
+    "mail": "nico@gmail.com",
+    "telefono": 1166945555
+  },
+  {
+    "clienteId": 4,
+    "nombre": "Maria",
+    "mail": "maria@gmail.com",
+    "telefono": 1166963712
+  },
+  {
+    "clienteId": 5,
+    "nombre": "Celeste",
+    "mail": "celeste@gmail.com",
+    "telefono": 1164852712
+  }
+]

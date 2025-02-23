@@ -1,7 +1,13 @@
 package com.munidigital.carwash.repository;
 
+import com.munidigital.carwash.model.entity.Cliente;
 import com.munidigital.carwash.model.entity.Cobro;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CobroRepository extends JpaRepository<Cobro, Long> {
+import java.util.List;
+
+public interface CobroRepository {
+
+    Cobro saveCobro(Cobro cobro);
+
+    List<Cobro> obtenerCobros();
 }

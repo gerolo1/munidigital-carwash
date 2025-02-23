@@ -1,7 +1,16 @@
 package com.munidigital.carwash.repository;
 
+import com.munidigital.carwash.model.entity.Cliente;
 import com.munidigital.carwash.model.entity.Vehiculo;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VehiculoRepository extends JpaRepository<Vehiculo, Long> {
+import java.util.List;
+import java.util.Optional;
+
+public interface VehiculoRepository {
+
+    Vehiculo saveVehiculo(Vehiculo vehiculo);
+
+    Optional<Vehiculo> buscarVehiculo(Long vehiculoId);
+
+    List<Vehiculo> obtenerVehiculos();
 }

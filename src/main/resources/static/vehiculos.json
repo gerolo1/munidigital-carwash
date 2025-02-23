@@ -1,0 +1,62 @@
+[
+  {
+    "vehiculoId": 1,
+    "modelo": "Renault Duster",
+    "matricula": "A953XSD",
+    "tipo": {
+      "tipoVehiculoId": 1,
+      "nombre": "SUV"
+    },
+    "cliente": {
+      "clienteId": 3,
+      "nombre": "Nico",
+      "mail": "nico@gmail.com",
+      "telefono": 1166945555
+    }
+  },
+  {
+    "vehiculoId": 2,
+    "modelo": "Honda Civic",
+    "matricula": "B123ASD",
+    "tipo": {
+      "tipoVehiculoId": 2,
+      "nombre": "Sedan"
+    },
+    "cliente": {
+      "clienteId": 5,
+      "nombre": "Celeste",
+      "mail": "celeste@gmail.com",
+      "telefono": 1164852712
+    }
+  },
+  {
+    "vehiculoId": 3,
+    "modelo": "Peugeot 208",
+    "matricula": "F593PLD",
+    "tipo": {
+      "tipoVehiculoId": 3,
+      "nombre": "Hatchback"
+    },
+    "cliente": {
+      "clienteId": 4,
+      "nombre": "Maria",
+      "mail": "maria@gmail.com",
+      "telefono": 1166963712
+    }
+  },
+  {
+    "vehiculoId": 4,
+    "modelo": "Audi TT",
+    "matricula": "A456XSD",
+    "tipo": {
+      "tipoVehiculoId": 5,
+      "nombre": "Coupe"
+    },
+    "cliente": {
+      "clienteId": 1,
+      "nombre": "Carlos",
+      "mail": "carlos@gmail.com",
+      "telefono": 1155998844
+    }
+  }
+]

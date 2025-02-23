@@ -1,0 +1,22 @@
+[
+  {
+    "tipoVehiculoId": 1,
+    "nombre": "SUV"
+  },
+  {
+    "tipoVehiculoId": 2,
+    "nombre": "Sedan"
+  },
+  {
+    "tipoVehiculoId": 3,
+    "nombre": "Hatchback"
+  },
+  {
+    "tipoVehiculoId": 4,
+    "nombre": "4x4"
+  },
+  {
+    "tipoVehiculoId": 5,
+    "nombre": "Coupe"
+  }
+]
