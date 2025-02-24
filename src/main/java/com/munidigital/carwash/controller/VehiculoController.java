@@ -1,7 +1,6 @@
 package com.munidigital.carwash.controller;
 
 import com.munidigital.carwash.model.dto.VehiculoCreateRequest;
-import com.munidigital.carwash.model.entity.Cliente;
 import com.munidigital.carwash.model.entity.Vehiculo;
 import com.munidigital.carwash.service.VehiculoService;
 import lombok.AllArgsConstructor;

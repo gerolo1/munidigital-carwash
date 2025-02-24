@@ -3,7 +3,7 @@
     "vehiculoId": 1,
     "modelo": "Renault Duster",
     "matricula": "A953XSD",
-    "tipo": {
+    "tipoVehiculo": {
       "tipoVehiculoId": 1,
       "nombre": "SUV"
     },
@@ -18,7 +18,7 @@
     "vehiculoId": 2,
     "modelo": "Honda Civic",
     "matricula": "B123ASD",
-    "tipo": {
+    "tipoVehiculo": {
       "tipoVehiculoId": 2,
       "nombre": "Sedan"
     },
@@ -33,7 +33,7 @@
     "vehiculoId": 3,
     "modelo": "Peugeot 208",
     "matricula": "F593PLD",
-    "tipo": {
+    "tipoVehiculo": {
       "tipoVehiculoId": 3,
       "nombre": "Hatchback"
     },
@@ -48,7 +48,7 @@
     "vehiculoId": 4,
     "modelo": "Audi TT",
     "matricula": "A456XSD",
-    "tipo": {
+    "tipoVehiculo": {
       "tipoVehiculoId": 5,
       "nombre": "Coupe"
     },
